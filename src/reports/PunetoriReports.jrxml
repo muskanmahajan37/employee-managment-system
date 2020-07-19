@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="561" pageHeight="576" columnWidth="533" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" uuid="245dbae8-f036-4907-b328-5c624b0b5977">
+	<property name="ireport.zoom" value="1.7715610000000055"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="numberTotal" class="java.lang.Integer"/>
+	<parameter name="randomNumber" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from punetori;]]>
+	</queryString>
+	<field name="punetoriID" class="java.lang.Integer"/>
+	<field name="departmenti_id" class="java.lang.Integer"/>
+	<field name="emri" class="java.lang.String"/>
+	<field name="mbiemri" class="java.lang.String"/>
+	<field name="gjinia" class="java.lang.String"/>
+	<field name="qyteti" class="java.lang.String"/>
+	<field name="adresa" class="java.lang.String"/>
+	<field name="data_lindjes" class="java.sql.Date"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="data_punesimit" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="533" height="58" forecolor="#00FFFF" backcolor="#006699" uuid="d0503995-f19c-465e-805f-c9c160ad40ea"/>
+				<staticText>
+					<reportElement x="122" y="15" width="304" height="26" uuid="bf9bdfab-c4dd-4190-8369-5c1d4ca5abf0"/>
+					<textElement>
+						<font fontName="Arial" size="18"/>
+					</textElement>
+					<text><![CDATA[EMPLOYEE MANAGMENT SYSTEM]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="140" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="69" width="128" height="20" uuid="ea21a4c3-7538-4791-b7a4-30dba6847ded"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Total numri punetoreve:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="467" y="29" width="53" height="1" uuid="b8d80c0a-8b9f-42dc-85c9-0d89bd2a84df"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="467" y="16" width="83" height="19" uuid="25c475f0-8c61-4dc3-83a1-7bc00f5444c4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="150" y="83" width="19" height="1" uuid="82844cdc-6e8e-47a7-b06f-7aa9043b3ec7"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="12" y="49" width="100" height="20" uuid="ca9e9b2e-f84f-4c25-9751-11824de17987"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Numri i raportit:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="102" y="65" width="11" height="1" uuid="edc7096f-ef7d-421d-9199-28663d80eaff"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="92" y="120" width="61" height="20" uuid="75e46222-703b-43d4-9989-a669594cd0a2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[ PunetoriID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="120" width="61" height="20" uuid="f01a91e9-653f-4cde-bb4f-cdca36e4c8d9"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[ Emri]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="120" width="61" height="20" uuid="0be635e6-f986-4049-b605-f57de512c1a0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[ Mbiemri]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="120" width="61" height="20" uuid="1ac8d48b-ceb3-4f34-b1c6-aa7ff86f2566"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[ Data Lindjes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="120" width="61" height="20" uuid="a37fe7e0-fe5e-4600-98fc-d003814d6dc2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[ Addresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="120" width="61" height="20" uuid="f44ff202-1304-4e67-a3f7-893b5df0c75a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[ Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="14" width="176" height="21" uuid="4f3dac40-a4ba-4f6f-9796-16ec63a6e573"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="14" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Raporti per punetoret]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="37" width="533" height="1" uuid="57781708-ab94-49fc-842e-01da20b4ea72"/>
+			</line>
+			<staticText>
+				<reportElement x="433" y="16" width="100" height="20" uuid="a8214d36-cbad-4919-93df-48affa394017"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="69" width="27" height="17" uuid="5f807e8c-7e0c-4940-8b71-5a5d71c89ecb"/>
+				<textFieldExpression><![CDATA[$P{numberTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="92" y="1" width="61" height="20" uuid="08ec9f17-9ea9-49ed-8cb3-fa901c03a154"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{punetoriID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="1" width="61" height="20" uuid="e578bb55-aeec-4721-8966-50d7710a0d2e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emri}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="1" width="61" height="20" uuid="dfce9ff2-b910-4080-8331-312f82673634"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mbiemri}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="275" y="1" width="61" height="20" uuid="0ec1cd06-c858-44dd-948c-b318581b45fa"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_lindjes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="337" y="1" width="61" height="20" uuid="fdf93e17-7239-43a0-bea8-85aab54e3f96"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{adresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="1" width="62" height="20" uuid="d54d769f-9429-4360-8cdd-40e0562786c6"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="491" y="0" width="42" height="20" uuid="a7e44ce8-3f67-43c5-816b-e4aa28c8d2de"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

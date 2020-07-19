@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="400" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="06014c05-cd75-4e43-96ae-742ecc7d158a">
+	<property name="ireport.zoom" value="2.357947691000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="emriPunetorit" class="java.lang.String"/>
+	<parameter name="ngaDate" class="java.util.Date"/>
+	<parameter name="deriDate" class="java.util.Date"/>
+	<parameter name="total" class="java.lang.Double"/>
+	<parameter name="jashtOrarit" class="java.lang.Double"/>
+	<queryString>
+		<![CDATA[select * from Vijueshmeria v inner join Punetori p on v.punetori_id=p.punetoriid]]>
+	</queryString>
+	<field name="vijueshmeriaID" class="java.lang.Integer"/>
+	<field name="punetori_id" class="java.lang.Integer"/>
+	<field name="data" class="java.sql.Date"/>
+	<field name="koha_fillimit" class="java.lang.String"/>
+	<field name="koha_mbarimit" class="java.lang.String"/>
+	<field name="total" class="java.lang.Double"/>
+	<field name="jasht_orarit" class="java.lang.Double"/>
+	<field name="punetoriID" class="java.lang.Integer"/>
+	<field name="departmenti_id" class="java.lang.Integer"/>
+	<field name="emri" class="java.lang.String"/>
+	<field name="mbiemri" class="java.lang.String"/>
+	<field name="gjinia" class="java.lang.String"/>
+	<field name="qyteti" class="java.lang.String"/>
+	<field name="adresa" class="java.lang.String"/>
+	<field name="data_lindjes" class="java.sql.Date"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="data_punesimit" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="79" forecolor="#00FFFF" backcolor="#006699" uuid="16ba415a-cddc-49ad-b59d-11a91eb5fd79"/>
+				<staticText>
+					<reportElement x="122" y="15" width="304" height="26" uuid="b8c3275e-b798-4acf-b978-4d0d7b9a4cb1"/>
+					<textElement>
+						<font fontName="Arial" size="18"/>
+					</textElement>
+					<text><![CDATA[EMPLOYEE MANAGMENT SYSTEM]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="0" width="170" height="20" uuid="95c1f388-1f5a-4cfe-9946-ef9810697170"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Vijueshmeria e punetoreve]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="0" width="37" height="20" uuid="9742865a-60ef-4b60-960a-fa038d02f523"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="497" y="0" width="58" height="20" uuid="8af86d5d-56bb-4d32-91bb-913b0203862a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="97" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="2" width="555" height="1" uuid="e169a4dd-7ad2-4446-8aca-bc851e43d34c"/>
+			</line>
+			<staticText>
+				<reportElement x="51" y="76" width="59" height="20" uuid="162fc26c-a4da-456d-a208-b960d9c46ea1"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[PunetoriID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="76" width="67" height="20" uuid="410b6c71-222e-42cd-8c56-ee5dd91c7ec5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="177" y="76" width="83" height="20" uuid="25bdf43a-acb1-417b-ab91-824be4bc3739"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[Koha Fillimit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="332" y="76" width="65" height="20" uuid="44709cc9-36f9-413f-9513-5fdf13e5b53c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[Totali]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="76" width="72" height="20" uuid="2205abe6-bc74-49c6-ac32-2dc9af5f8431"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[Koha Mbarimit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="14" width="52" height="14" uuid="5fb748d4-5405-4656-bfdd-49991e94e0e9"/>
+				<text><![CDATA[Punetori:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="38" width="120" height="20" uuid="7bf0ab83-5669-44e9-921d-c4d55433cfb0"/>
+				<text><![CDATA[Nga data :                   ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="14" width="100" height="20" uuid="60c3b2df-4ec4-4843-88b4-042035d8a841"/>
+				<textFieldExpression><![CDATA[$P{emriPunetorit}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="66" y="38" width="68" height="20" uuid="3f5f676c-bbfc-4d69-bdfd-f0c671ecbc7f"/>
+				<textFieldExpression><![CDATA[$P{ngaDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="138" y="38" width="80" height="14" uuid="cd586727-ed79-4b4b-a8e2-780b2398f841"/>
+				<text><![CDATA[deri me daten:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="218" y="38" width="100" height="20" uuid="62fcdb23-cc8f-4af7-820f-74fe795b7335"/>
+				<textFieldExpression><![CDATA[$P{deriDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="397" y="76" width="100" height="20" uuid="2017dede-e500-4234-9f85-af7417b6e431"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[Jashte Orarit]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="51" y="0" width="59" height="20" uuid="3d08f996-f130-4d15-b6d4-6b7a71826504"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[     $F{punetori_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="110" y="0" width="67" height="20" uuid="5fa790d0-9dfe-463d-a732-b43dd12ed15f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="0" width="83" height="20" uuid="5093ce30-821f-41e5-8e99-fdc6d2329af8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{koha_fillimit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="72" height="20" uuid="5d96a5d2-015a-4f90-90e3-80bc3d7edb45"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{koha_mbarimit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="332" y="0" width="65" height="20" uuid="3ed887ab-0a80-4a67-a37e-de5edd583a92"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="0" width="100" height="20" uuid="ca5eb4af-98b0-42e5-8bb5-e2c8eb322744"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{jasht_orarit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="332" y="4" width="65" height="20" uuid="ddd1c42b-ef8f-447c-83ce-5295600454df"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[Totali]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="332" y="24" width="65" height="20" uuid="0e8cbe6c-3786-4156-9626-b0b3661c8652"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="397" y="4" width="100" height="20" uuid="398dab20-9121-484a-8198-51e0f084c0e2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[Jashte Orarit]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="397" y="24" width="100" height="20" uuid="a5b3155a-abf8-4c36-8e0c-a6558aa36aac"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$P{jashtOrarit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="527" y="0" width="28" height="20" uuid="60a8faff-3745-435d-9972-0d5a4e3e27e7"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="ad151240-9672-42b1-b250-7b50aed673d7"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

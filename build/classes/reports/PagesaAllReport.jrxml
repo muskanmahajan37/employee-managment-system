@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a2865191-669a-42a6-8070-7d7591e7d07d">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="emri" class="java.lang.String"/>
+	<parameter name="departmenti" class="java.lang.String"/>
+	<parameter name="pozita" class="java.lang.String"/>
+	<parameter name="trans" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM PERDORUESI PR INNER JOIN PUNETORI P ON PR.punetoriID = P.punetoriID INNER JOIN Titulli_Punetorit TP ON P.titulli = TP.TitulliID
+INNER JOIN DEPARTMENTI D ON D.departmentiID = P.departmenti_id INNER JOIN PAGESA PA ON PR.PerdoruesiID = PA.perdoruesi_id INNER JOIN ZBRITJA Z
+ON Z.PagesaID = PA.PagesaID INNER JOIN KONTRATA K ON k.punetori_id=P.punetoriID]]>
+	</queryString>
+	<field name="PerdoruesiID" class="java.lang.Integer"/>
+	<field name="Username" class="java.lang.String"/>
+	<field name="Password" class="java.lang.String"/>
+	<field name="punetoriID" class="java.lang.Integer"/>
+	<field name="RoliID" class="java.lang.Integer"/>
+	<field name="departmenti_id" class="java.lang.Integer"/>
+	<field name="titulli" class="java.lang.Integer"/>
+	<field name="emri" class="java.lang.String"/>
+	<field name="mbiemri" class="java.lang.String"/>
+	<field name="gjinia" class="java.lang.String"/>
+	<field name="qyteti" class="java.lang.String"/>
+	<field name="adresa" class="java.lang.String"/>
+	<field name="data_lindjes" class="java.sql.Date"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="data_punesimit" class="java.sql.Date"/>
+	<field name="TitulliID" class="java.lang.Integer"/>
+	<field name="titulli_pershkrimi" class="java.lang.String"/>
+	<field name="pagesa_ore" class="java.lang.Double"/>
+	<field name="departmentiID" class="java.lang.Integer"/>
+	<field name="emri_departmentit" class="java.lang.String"/>
+	<field name="PagesaID" class="java.lang.Integer"/>
+	<field name="perdoruesi_id" class="java.lang.Integer"/>
+	<field name="data_pageses" class="java.sql.Date"/>
+	<field name="totali_bruto" class="java.lang.Double"/>
+	<field name="totali_neto" class="java.lang.Double"/>
+	<field name="muaji_pageses" class="java.sql.Date"/>
+	<field name="ZbritjaID" class="java.lang.Integer"/>
+	<field name="bruto" class="java.lang.Double"/>
+	<field name="kontributi_personal" class="java.lang.Double"/>
+	<field name="zbritja_tatimore" class="java.lang.Double"/>
+	<field name="KontrataID" class="java.lang.Integer"/>
+	<field name="pagesa_per_ore" class="java.lang.Double"/>
+	<field name="data_fillimit" class="java.sql.Date"/>
+	<field name="data_mbarimit" class="java.sql.Date"/>
+	<field name="punetori_id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="79" forecolor="#00FFFF" backcolor="#006699" uuid="57db271b-0f7e-4ad3-b57a-b6ff64e0c5eb"/>
+				<staticText>
+					<reportElement x="122" y="15" width="304" height="26" uuid="ba01ba1f-b790-45a0-902b-fefa8f68ccb8"/>
+					<textElement>
+						<font fontName="Arial" size="18"/>
+					</textElement>
+					<text><![CDATA[EMPLOYEE MANAGMENT SYSTEM]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="0" width="222" height="20" uuid="8532fdfb-7a4d-4f8b-bdf3-1fd1ab0d0d41"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Raport i pagesave te punetoreve]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="0" width="37" height="20" uuid="2d44c2b5-1ffe-438e-b593-b829a854897b"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="497" y="0" width="58" height="20" uuid="ace4ac0f-8e5a-4dc9-b416-0bcf45f8e674"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="168" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="f0727f88-b7fc-4dfc-b63e-5d450584bb32"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="23" y="60" width="52" height="20" uuid="bfcfba58-a636-4905-b64d-b935828ab3f0"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Punetori:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="102" y="60" width="100" height="20" uuid="e4a1cd8b-2d91-460e-be7d-d94c1ec7a090"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{emri}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="335" y="148" width="83" height="20" uuid="f3c91523-e9fd-46d9-b7c6-666d0c51b389"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[ Total bruto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="148" width="133" height="20" uuid="1ee76824-0d5e-49fa-818e-9caf24376031"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[ Emri dhe Mbiemri]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="148" width="59" height="20" uuid="a9abee00-3eef-4a3b-9ebf-b1bfb67d130c"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[PagesaID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="148" width="72" height="20" uuid="8bb0d4fe-5cd7-4296-b6bd-b8ccf0b7c26f"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[ Total neto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="148" width="80" height="20" uuid="bd66b62a-f30f-41bd-a6f4-ea2cee4987da"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<text><![CDATA[  Muaji Pageses]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="80" width="59" height="20" uuid="879cb431-a37e-44f1-bfa0-e8d66181915d"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Departmenti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="100" width="52" height="20" uuid="183ea9b9-664e-4de4-ab3a-63c350ea740c"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Pozita]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="102" y="80" width="100" height="20" uuid="f88595fd-795c-4d4a-b7af-adb1bf6712f0"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{departmenti}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="100" width="100" height="20" uuid="3553ec0d-7f60-467f-af1f-c2d4fd8f39c5"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pozita}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="23" y="18" width="91" height="20" uuid="37d3e05f-c8b5-43b0-864c-d02fe7748cf2"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Transaction ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="114" y="18" width="100" height="20" uuid="35a1157a-f9bd-47b0-bf68-a3b1acfc8510"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{trans}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="135" width="555" height="1" uuid="a449f3b7-15b6-45d7-a2f6-d1832d047684"/>
+			</line>
+			<line>
+				<reportElement x="114" y="36" width="65" height="1" uuid="90f06150-9881-4dd4-a980-0e8c67cf8a14"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="255" y="0" width="80" height="20" uuid="a14321c4-b636-4787-afae-e7296c254455"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textFieldExpression><![CDATA[  $F{muaji_pageses}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="0" width="59" height="20" uuid="d74899c8-5cc0-4b46-ac30-f20f7f613654"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textFieldExpression><![CDATA[ $F{PagesaID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="0" width="83" height="20" uuid="5c25d6e4-29b1-4a83-8de6-f264e391c292"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textFieldExpression><![CDATA[ $F{totali_bruto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="0" width="72" height="20" uuid="2141e87e-ea40-4021-a058-37b0e57815bb"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textFieldExpression><![CDATA[ $F{totali_neto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="0" width="133" height="20" uuid="1a1db844-b20c-4c11-8993-4b1e9df59981"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{emri}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="0" width="73" height="20" uuid="6ab75799-d3e3-4aa8-a89c-825c2b6221ba"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{mbiemri}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="527" y="0" width="28" height="20" uuid="14fcc670-9d3d-4b87-a496-fef159be7d76"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

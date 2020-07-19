@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="EmployeeManagmentSystemPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>DAL.Perdoruesi</class>
+    <class>DAL.Punetori</class>
+    <class>DAL.Departmenti</class>
+    <class>DAL.Roli</class>
+    <class>DAL.Telefoni</class>
+    <class>DAL.Vijueshmeria</class>
+    <class>DAL.Njoftimi</class>
+    <class>DAL.NjoftimiLloji</class>
+    <class>DAL.Verejtja</class>
+    <class>DAL.TitulliPunetorit</class>
+    <class>DAL.Pagesa</class>
+    <class>DAL.Kontrata</class>
+    <class>DAL.TitulliPunetorit_1</class>
+    <class>DAL.Perdoruesi_1</class>
+    <class>DAL.Departmenti_1</class>
+    <class>DAL.Roli_1</class>
+    <class>DAL.Punetori_1</class>
+    <class>DAL.Zbritja</class>
+    <class>DAL.PushimiPunetori</class>
+    <class>DAL.Pushimi</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=EmployeeManagment"/>
+      <property name="javax.persistence.jdbc.user" value="sa"/>
+      <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+      <property name="javax.persistence.jdbc.password" value="sa"/>
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="578" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="538" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="52128deb-1bfc-4699-8a66-fea52b9e40b2">
+	<property name="ireport.zoom" value="1.7715610000000062"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ngaDate" class="java.util.Date"/>
+	<parameter name="deriDate" class="java.util.Date"/>
+	<parameter name="numberOfEmployees" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT * FROM PUNETORI,Departmenti]]>
+	</queryString>
+	<field name="punetoriID" class="java.lang.Integer"/>
+	<field name="departmenti_id" class="java.lang.Integer"/>
+	<field name="emri" class="java.lang.String"/>
+	<field name="mbiemri" class="java.lang.String"/>
+	<field name="gjinia" class="java.lang.String"/>
+	<field name="qyteti" class="java.lang.String"/>
+	<field name="adresa" class="java.lang.String"/>
+	<field name="data_lindjes" class="java.sql.Date"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="data_punesimit" class="java.sql.Date"/>
+	<field name="departmentiID" class="java.lang.Integer"/>
+	<field name="emri_departmentit" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="538" height="67" forecolor="#00FFFF" backcolor="#006699" uuid="f8667db0-3c38-4622-98b5-99be14e5e13b"/>
+				<staticText>
+					<reportElement x="122" y="15" width="304" height="26" uuid="a3cb4cc9-3dba-4cc7-9e51-7a7daa8e9558"/>
+					<textElement>
+						<font fontName="Arial" size="18"/>
+					</textElement>
+					<text><![CDATA[EMPLOYEE MANAGMENT SYSTEM]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="140">
+			<staticText>
+				<reportElement x="57" y="120" width="100" height="20" uuid="bdfd0ed1-bc5f-41c9-87dd-db84ff42d2ee"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[ PunetoriId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="120" width="100" height="20" uuid="0cf09074-4056-430a-af06-e9928d7d4a6e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[Departmenti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="120" width="100" height="20" uuid="5808e844-a362-4a0c-8475-e85ad7ac6de8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[Emri]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="120" width="100" height="20" uuid="de68adbd-f44a-4fb1-b41e-206b174b3c18"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[Mbiemri]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="182" height="20" uuid="01ad60ab-5629-42c1-a6b9-a9a05b34c88a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Lista e punetoreve te regjistruar nga data:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="182" y="58" width="64" height="1" uuid="faf59e86-337f-434b-b21a-40cda7283556"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="282" y="45" width="74" height="20" uuid="e12a6b3c-c11a-4de2-abe5-622b6a9380ea"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[deri me daten]]></text>
+			</staticText>
+			<line>
+				<reportElement x="369" y="58" width="60" height="1" uuid="bebf98c7-47bc-4208-8ba1-ef3775f8146c"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="182" y="43" width="88" height="20" uuid="29ba01eb-4adc-4bb4-80ac-171deaaff55a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ngaDate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="368" y="43" width="100" height="20" uuid="1821261e-5f30-428e-b734-20885a420699"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{deriDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="78" width="78" height="20" uuid="4e7de853-aca6-4a48-8096-f6d93bd9118b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Numri Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="88" y="78" width="128" height="20" uuid="dc94cc5c-4c9b-478a-b2b5-9a2d32dfa16a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numberOfEmployees}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="468" y="5" width="70" height="19" uuid="7407555f-6483-46c3-8816-2d3e8f11ec36"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="122" y="5" width="307" height="20" uuid="907a79a9-c85f-4031-8e75-e9549c224a73"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Raporti i punetoreve  sipas dates se punesimit]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="32" width="538" height="1" uuid="61d9afd6-ed0c-44b9-a50c-d9bc9a26d22c"/>
+			</line>
+			<staticText>
+				<reportElement x="438" y="5" width="41" height="20" uuid="5ed74075-04e9-4f95-9630-c57b825a44be"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement x="57" y="0" width="100" height="20" uuid="53695152-f1a4-44fb-b245-5ff10041da1f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{punetoriID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="0" width="100" height="20" uuid="6361831d-9a84-495d-b1fa-36e38619b32a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{emri_departmentit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="0" width="100" height="20" uuid="2964c2dd-3f29-4cb4-aa2e-315cefb558b7"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{emri}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="357" y="0" width="100" height="20" uuid="6325e38e-d0e1-4c14-9b77-0cd893bbaff3"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{mbiemri}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="503" y="0" width="35" height="20" uuid="df212d6a-048d-4329-ae30-a407411c432d"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

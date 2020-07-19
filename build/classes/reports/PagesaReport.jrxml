@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="720" pageHeight="648" whenNoDataType="AllSectionsNoDetail" columnWidth="680" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf90247d-060f-4950-b610-6b1648f04d2a">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="total" class="java.lang.Double"/>
+	<parameter name="jashtOrarit" class="java.lang.Double"/>
+	<parameter name="festa" class="java.lang.Double"/>
+	<parameter name="trans1" class="java.lang.String"/>
+	<parameter name="muaji" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM PERDORUESI PR INNER JOIN PUNETORI P ON PR.punetoriID = P.punetoriID INNER JOIN Titulli_Punetorit TP ON P.titulli = TP.TitulliID
+INNER JOIN DEPARTMENTI D ON D.departmentiID = P.departmenti_id INNER JOIN PAGESA PA ON PR.PerdoruesiID = PA.perdoruesi_id INNER JOIN ZBRITJA Z
+ON Z.PagesaID = PA.PagesaID INNER JOIN KONTRATA K ON k.punetori_id=P.punetoriID]]>
+	</queryString>
+	<field name="PerdoruesiID" class="java.lang.Integer"/>
+	<field name="Username" class="java.lang.String"/>
+	<field name="Password" class="java.lang.String"/>
+	<field name="punetoriID" class="java.lang.Integer"/>
+	<field name="RoliID" class="java.lang.Integer"/>
+	<field name="departmenti_id" class="java.lang.Integer"/>
+	<field name="titulli" class="java.lang.Integer"/>
+	<field name="emri" class="java.lang.String"/>
+	<field name="mbiemri" class="java.lang.String"/>
+	<field name="gjinia" class="java.lang.String"/>
+	<field name="qyteti" class="java.lang.String"/>
+	<field name="adresa" class="java.lang.String"/>
+	<field name="data_lindjes" class="java.sql.Date"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="data_punesimit" class="java.sql.Date"/>
+	<field name="TitulliID" class="java.lang.Integer"/>
+	<field name="titulli_pershkrimi" class="java.lang.String"/>
+	<field name="pagesa_ore" class="java.lang.Double"/>
+	<field name="departmentiID" class="java.lang.Integer"/>
+	<field name="emri_departmentit" class="java.lang.String"/>
+	<field name="PagesaID" class="java.lang.Integer"/>
+	<field name="perdoruesi_id" class="java.lang.Integer"/>
+	<field name="data_pageses" class="java.sql.Date"/>
+	<field name="totali_bruto" class="java.lang.Double"/>
+	<field name="totali_neto" class="java.lang.Double"/>
+	<field name="muaji_pageses" class="java.sql.Date"/>
+	<field name="ZbritjaID" class="java.lang.Integer"/>
+	<field name="bruto" class="java.lang.Double"/>
+	<field name="kontributi_personal" class="java.lang.Double"/>
+	<field name="zbritja_tatimore" class="java.lang.Double"/>
+	<field name="KontrataID" class="java.lang.Integer"/>
+	<field name="pagesa_per_ore" class="java.lang.Double"/>
+	<field name="data_fillimit" class="java.sql.Date"/>
+	<field name="data_mbarimit" class="java.sql.Date"/>
+	<field name="punetori_id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="680" height="72" forecolor="#00FFFF" backcolor="#006699" uuid="2fe4f8a1-cba1-406d-9bae-fedcd8bfd582"/>
+				<staticText>
+					<reportElement x="210" y="18" width="304" height="26" uuid="7b9b1d3b-8a98-4580-bdd5-f6ef23606282"/>
+					<textElement>
+						<font fontName="Arial" size="18"/>
+					</textElement>
+					<text><![CDATA[EMPLOYEE MANAGMENT SYSTEM]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37">
+			<staticText>
+				<reportElement x="226" y="10" width="222" height="20" uuid="63871b30-4e8a-40e7-931e-8fa7a9958a3a"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Raport i pagesave te punetoreve]]></text>
+			</staticText>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="622" y="10" width="58" height="20" uuid="14a745e2-496d-4cbc-8045-1fc8d8543467"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="585" y="10" width="37" height="20" uuid="c95c3838-fccb-4423-9125-b97d5187af16"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="36" width="680" height="1" uuid="1080d7fe-81df-4e40-97b0-0f912297f075"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="63">
+			<staticText>
+				<reportElement x="19" y="11" width="91" height="20" uuid="8ecd71c4-7d06-4ed5-bc1c-a6af30392dc2"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Transaction ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="11" width="100" height="20" uuid="a3490d2a-9aeb-424e-88aa-7bf93d4774bd"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{trans1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="31" width="153" height="20" uuid="1336281d-7838-4c4a-a1a9-6c8c90a44646"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Pagesa e kryer me daten]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yy">
+				<reportElement x="156" y="31" width="100" height="20" uuid="82df2c5b-1d23-4fe6-95ad-d9d329a5b3ad"/>
+				<textFieldExpression><![CDATA[$F{muaji_pageses}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="193" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="31" width="100" height="20" uuid="4afb70ab-0d5c-41b5-9b78-2000bd6adc2b"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Emri]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="51" width="100" height="20" uuid="8fd296ed-ee23-4ae6-b47b-f950f4a366df"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Departmenti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="71" width="100" height="20" uuid="6d5fa631-4f6f-4bd3-947f-17d4968882f4"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Pozita]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="31" width="100" height="20" uuid="4bdcbdd2-3b8a-4f26-9186-7137d45f1f46"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Total Oret]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="71" width="100" height="20" uuid="55e70c73-e3c6-49e1-9fc8-f6896e616628"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Total Festa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="51" width="100" height="20" uuid="467a54ad-822c-465c-8369-29ba499fb92a"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Total jasht orarit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="51" width="100" height="20" uuid="9d65e4e2-0609-460e-beaf-3ad9637a62c0"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Totali Bruto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="31" width="100" height="20" uuid="53c20367-753a-4e2a-a3c5-d9475b1a3093"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Pagesa per ore]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="71" width="100" height="20" uuid="0cd63935-1812-43dc-8399-5ea77f4716a8"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Kontributi Pensional]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="132" width="100" height="20" uuid="9604dbc2-5fb8-4ab8-86a0-431881bc118e"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Neto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="91" width="100" height="20" uuid="024cae61-64b5-46df-ab4f-9c3caf46f449"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[TVSH]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="31" width="100" height="20" uuid="9edcc591-b527-46a6-b289-95172f85b2c6"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emri}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="51" width="100" height="20" uuid="1e0eb1dd-a64c-469e-9500-7161f250243c"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emri_departmentit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="71" width="100" height="20" uuid="0c326c9d-adce-426e-94da-a1e58e21b069"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{titulli_pershkrimi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="556" y="31" width="100" height="20" uuid="330ecec6-ed09-40a5-9e31-72b473ec85ee"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pagesa_per_ore}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="556" y="51" width="100" height="20" uuid="69acc65f-bf1e-4d78-99ab-766998af8b00"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totali_bruto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="556" y="71" width="100" height="20" uuid="adf3cd78-944d-4612-b890-d08e4e32c18d"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kontributi_personal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="556" y="91" width="100" height="20" uuid="c9d67f7b-3e93-4e67-b633-98dad74fb30e"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{zbritja_tatimore}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="556" y="132" width="100" height="20" uuid="20cbf4da-3dab-4cc2-893d-487bdbc5be5e"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totali_neto}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="455" y="119" width="201" height="1" uuid="c98d317d-496f-4d1e-ae1a-3d0ca88436e5"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="326" y="31" width="100" height="20" uuid="e15b332d-9e6a-475c-a223-9970f257c1c1"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="326" y="51" width="100" height="20" uuid="7c2dc7d0-568e-4e4d-a073-cf4529d8c57f"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{jashtOrarit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="326" y="71" width="100" height="20" uuid="a6258685-5f13-4e72-8b2c-4a85f2da56a9"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{festa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

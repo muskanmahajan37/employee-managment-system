@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="87de3f0a-a05f-4fec-bad3-a3dd28b97c8f">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select * from Pushimi_Punetori p Inner join Perdoruesi pr on pr.PerdoruesiID=p.perdoruesiID Inner join Punetori pune on pune.punetoriID=pr.punetoriID Inner join Pushimi pu on p.pushimiID=pu.pushimiID]]>
+	</queryString>
+	<field name="pushimi_punetoriID" class="java.lang.Integer"/>
+	<field name="perdoruesiID" class="java.lang.Integer"/>
+	<field name="pushimiID" class="java.lang.Integer"/>
+	<field name="dataFillimit" class="java.sql.Date"/>
+	<field name="dataMbarimit" class="java.sql.Date"/>
+	<field name="totali" class="java.lang.Integer"/>
+	<field name="kerkuara" class="java.lang.Integer"/>
+	<field name="mbetura" class="java.lang.Integer"/>
+	<field name="Username" class="java.lang.String"/>
+	<field name="Password" class="java.lang.String"/>
+	<field name="punetoriID" class="java.lang.Integer"/>
+	<field name="RoliID" class="java.lang.Integer"/>
+	<field name="departmenti_id" class="java.lang.Integer"/>
+	<field name="emri" class="java.lang.String"/>
+	<field name="mbiemri" class="java.lang.String"/>
+	<field name="gjinia" class="java.lang.String"/>
+	<field name="qyteti" class="java.lang.String"/>
+	<field name="adresa" class="java.lang.String"/>
+	<field name="data_lindjes" class="java.sql.Date"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="data_punesimit" class="java.sql.Date"/>
+	<field name="emri_pushimit" class="java.lang.String"/>
+	<field name="ditet" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="11" y="10" width="533" height="58" forecolor="#00FFFF" backcolor="#006699" uuid="700b5e88-955b-43bb-9b87-eea465177926"/>
+				<staticText>
+					<reportElement x="122" y="15" width="304" height="26" uuid="015df298-5fb4-4d1d-b98c-d1960030806b"/>
+					<textElement>
+						<font fontName="Arial" size="18"/>
+					</textElement>
+					<text><![CDATA[EMPLOYEE MANAGMENT SYSTEM]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="194" y="80" width="176" height="21" uuid="cefa66b8-a623-4736-84eb-b4cc756112f3"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="14" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Raportet per pushime]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="81" width="29" height="20" uuid="d195902d-cc99-40ba-b5c9-ea839f9bafa3"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="449" y="81" width="100" height="20" uuid="546ad1c8-944b-45ad-966f-8e79684567c1"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="433" y="41" width="100" height="20" uuid="7a6727a5-6117-4bfd-8e44-8be71c99aaac"/>
+				<text><![CDATA[Nr.kerkuar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="41" width="74" height="20" uuid="867e3ad4-c521-4f82-ad64-13a280f670bf"/>
+				<text><![CDATA[Punetori ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="107" y="41" width="126" height="20" uuid="b7994d73-aba9-4ac1-8683-4a331eeb9226"/>
+				<text><![CDATA[Lloji Pushimit	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="233" y="41" width="100" height="20" uuid="69bee3f5-34f2-4794-89a1-9c4efee6b65b"/>
+				<text><![CDATA[Data prej 	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="41" width="100" height="20" uuid="95586d76-ea5b-419e-95fe-215bfab7415d"/>
+				<text><![CDATA[Data deri]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="433" y="0" width="100" height="20" uuid="20705f52-b081-422b-8300-f2177fea1572"/>
+				<textFieldExpression><![CDATA[$F{kerkuara}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="33" y="0" width="74" height="20" uuid="ed92b5c6-1245-4387-ae66-d5ce3fda0867"/>
+				<textFieldExpression><![CDATA[$F{emri}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="0" width="126" height="20" uuid="7e09d333-fce3-4d25-9f29-45e7b9665ab1"/>
+				<textFieldExpression><![CDATA[$F{emri_pushimit}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="233" y="0" width="100" height="20" uuid="1c583794-2ccc-4863-9527-5e74beb409e5"/>
+				<textFieldExpression><![CDATA[$F{dataFillimit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="100" height="20" uuid="3615a612-ed10-40a3-8703-8c66fc07eeb5"/>
+				<textFieldExpression><![CDATA[$F{dataMbarimit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
